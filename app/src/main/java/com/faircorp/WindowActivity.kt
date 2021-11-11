@@ -14,10 +14,10 @@ class WindowActivity : BasicActivity() {
         val window = windowService.findById(id)
         if (window != null) {
             findViewById<TextView>(R.id.window_name).text = window.name
-            findViewById<TextView>(R.id.room_name).text = window.room.name
-            findViewById<TextView>(R.id.window_current_temperature).text = window.room.currentTemperature?.toString()
-            findViewById<TextView>(R.id.window_target_temperature).text = window.room.targetTemperature?.toString()
-            findViewById<TextView>(R.id.window_status).text = window.status.toString()
+            findViewById<TextView>(R.id.room_name).text = window.roomName
+            //findViewById<TextView>(R.id.window_current_temperature).text = window.room.currentTemperature?.toString()
+           // findViewById<TextView>(R.id.window_target_temperature).text = window.room.targetTemperature?.toString()
+            findViewById<TextView>(R.id.window_status).text = window.windowStatus.toString()
         }
 
     }
