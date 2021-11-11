@@ -21,6 +21,7 @@ class WindowActivity : BasicActivity() {
         var windowStatus : String
         var roomName : String
         var currentTemperature : String?
+        var targetTemperature : String?
 
         lifecycleScope.launch(context = Dispatchers.IO) { // (1)
             runCatching { ApiServices().windowsApiService.findById(id).execute() } // (2)
@@ -31,9 +32,38 @@ class WindowActivity : BasicActivity() {
                             windowName = window.name
                             roomName = window.roomName
                             windowStatus = window.windowStatus.toString()
-                            findViewById<TextView>(R.id.window_name).text = windowName
-                            findViewById<TextView>(R.id.room_name).text = roomName
-                            findViewById<TextView>(R.id.window_status).text = windowStatus
+                            val idRoom = window.roomId
+                            lifecycleScope.launch(context = Dispatchers.IO) { // (1)
+                                runCatching { ApiServices().roomsApiService.findById(idRoom).execute() } // (2)
+                                    .onSuccess {
+                                        withContext(context = Dispatchers.Main) { // (3)
+                                            val room = it.body()
+                                            if (room != null) {
+                                                currentTemperature = room.currentTemperature?.toString()
+                                                targetTemperature=room.targetTemperature?.toString()
+
+                                                /* I chose to populate the TextViews here all together so they show at the same time in the app */
+                                                findViewById<TextView>(R.id.window_name).text = windowName
+                                                findViewById<TextView>(R.id.room_name).text = roomName
+                                                findViewById<TextView>(R.id.window_status).text = windowStatus
+                                                findViewById<TextView>(R.id.window_current_temperature).text = currentTemperature
+                                                findViewById<TextView>(R.id.window_target_temperature).text = targetTemperature
+
+                                            }
+                                        }
+                                    }
+                                    .onFailure {
+                                        withContext(context = Dispatchers.Main) { // (3)
+                                            Toast.makeText(
+                                                applicationContext,
+                                                "Error on rooms loading $it",
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                        }
+                                    }
+                            }
+
+
 
                         }
 
@@ -57,5 +87,5 @@ class WindowActivity : BasicActivity() {
 
     }
 
-}
+
 }
