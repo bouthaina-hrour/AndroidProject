@@ -17,8 +17,6 @@ class WindowActivity : BasicActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val windowService =WindowService()
         val id = intent.getLongExtra(WINDOW_NAME_PARAM, 0)
-
-
         var windowName : String
         var windowStatus : String
         var roomName : String
@@ -33,15 +31,15 @@ class WindowActivity : BasicActivity() {
                             windowName = window.name
                             roomName = window.roomName
                             windowStatus = window.windowStatus.toString()
-                            findViewById<TextView>(R.id.txt_window_name_item).text = windowName
-                            findViewById<TextView>(R.id.txt_window_room).text = roomName
-                            findViewById<TextView>(R.id.txt_status).text = windowStatus
-
-                            }
+                            findViewById<TextView>(R.id.window_name).text = windowName
+                            findViewById<TextView>(R.id.room_name).text = roomName
+                            findViewById<TextView>(R.id.window_status).text = windowStatus
 
                         }
 
                     }
+
+                }
 
 
                 .onFailure {
@@ -58,4 +56,6 @@ class WindowActivity : BasicActivity() {
 
 
     }
+
+}
 }
