@@ -2,10 +2,10 @@ package com.faircorp
 
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 
 open class BasicActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

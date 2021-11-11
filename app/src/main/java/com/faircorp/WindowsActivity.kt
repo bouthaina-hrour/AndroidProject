@@ -2,11 +2,12 @@ package com.faircorp
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+
 import android.widget.Toast
 import androidx.lifecycle.*
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.model.ApiServices
 import com.faircorp.model.WindowAdapter
 import com.faircorp.service.WindowService
