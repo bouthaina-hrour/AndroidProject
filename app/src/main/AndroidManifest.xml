@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faircorp">
         <activity android:name=".WindowsActivity"></activity>
+        <activity android:name=".RoomActivity"></activity>
         <activity
             android:name=".WindowActivity"
             android:parentActivityName=".RoomsActivity" />
