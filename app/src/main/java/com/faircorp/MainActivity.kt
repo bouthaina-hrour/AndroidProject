@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 const val WINDOW_NAME_PARAM = "com.faircorp.windowname.attribute"
+const val ROOM_NAME_PARAM = "com.faircorp.roomname.attribute"
 
 class MainActivity : BasicActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {

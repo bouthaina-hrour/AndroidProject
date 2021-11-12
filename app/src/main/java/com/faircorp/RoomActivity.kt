@@ -1,7 +1,8 @@
 package com.faircorp
 
-import android.content.Intent
 import android.os.Bundle
+import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,21 +15,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class RoomsActivity :BasicActivity() ,OnRoomSelectedListener{
+class RoomActivity :BasicActivity() ,OnWindowSelectedListener{
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rooms)
+        setContentView(R.layout.activity_room)
 
-        val recyclerView=findViewById<RecyclerView>(R.id.list_rooms)
-        val adapter= RoomAdapter(this)
+        val recyclerView=findViewById<RecyclerView>(R.id.list_windows_of_room)
+        val adapter= WindowAdapter(this)
+        val id = intent.getLongExtra(ROOM_NAME_PARAM, 0)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
         lifecycleScope.launch(context = Dispatchers.IO) { // (1)
-            runCatching { ApiServices().roomsApiService.findAll().execute() } // (2)
+            runCatching { ApiServices().windowsApiService.findByRoomId(id).execute() } // (2)
                 .onSuccess {
                     withContext(context = Dispatchers.Main) { // (3)
                         adapter.update(it.body() ?: emptyList())
@@ -48,9 +50,10 @@ class RoomsActivity :BasicActivity() ,OnRoomSelectedListener{
 
 
     }
-    override fun onRoomSelected(id: Long) {
-        val intent = Intent(this, RoomActivity::class.java).putExtra(ROOM_NAME_PARAM, id)
-        startActivity(intent)
 
+    override fun onWindowSelected(id: Long) {
+        TODO("Not yet implemented")
     }
+
+
 }
