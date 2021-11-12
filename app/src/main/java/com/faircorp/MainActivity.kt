@@ -9,7 +9,7 @@ const val WINDOW_NAME_PARAM = "com.faircorp.windowname.attribute"
 class MainActivity : BasicActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_rooms)
     }
     fun openWindow(view: View) {
         // Extract value filled in editext identified with txt_window_name id
