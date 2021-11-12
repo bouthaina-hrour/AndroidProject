@@ -1,5 +1,6 @@
 package com.faircorp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Switch
 import android.widget.TextView
@@ -52,7 +53,8 @@ class RoomActivity :BasicActivity() ,OnWindowSelectedListener{
     }
 
     override fun onWindowSelected(id: Long) {
-        TODO("Not yet implemented")
+        val intent = Intent(this, WindowActivity::class.java).putExtra(WINDOW_NAME_PARAM, id)
+        startActivity(intent)
     }
 
 
