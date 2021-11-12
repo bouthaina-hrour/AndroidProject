@@ -12,8 +12,8 @@
         <activity android:name=".WindowsActivity"></activity>
         <activity
             android:name=".WindowActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:parentActivityName=".RoomsActivity" />
+        <activity android:name=".RoomsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
