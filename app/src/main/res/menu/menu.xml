@@ -7,6 +7,9 @@
         android:title="@string/menu_windows"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_rooms"
+        android:title="@string/menu_rooms" />
+    <item
         android:id="@+id/menu_website"
         android:title="@string/menu_website" />
     <item

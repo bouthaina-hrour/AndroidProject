@@ -9,6 +9,7 @@
     <string name="act_Windows_tiltle">Building windows</string>
 
     <string name="menu_windows">Building windows</string>
+    <string name="menu_rooms">Building rooms</string>
     <string name="menu_website">Our website</string>
     <string name="menu_email">Send us an email</string>
     <string name="act_window_name">Window name</string>
