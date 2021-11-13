@@ -22,10 +22,10 @@ open class BasicActivity : AppCompatActivity() {
                 Intent(this, RoomsActivity::class.java)
             )
             R.id.menu_website -> startActivity(
-                Intent(Intent.ACTION_VIEW, Uri.parse("https://dev-mind.fr"))
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://faircorp-bouthaina.cleverapps.io/"))
             )
             R.id.menu_email -> startActivity(
-                Intent(Intent.ACTION_SENDTO, Uri.parse("mailto://guillaume@dev-mind.fr"))
+                Intent(Intent.ACTION_SENDTO, Uri.parse("mailto://bouthaina.hrour@etu.emse.fr"))
             )
 
         }
