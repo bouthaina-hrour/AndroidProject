@@ -8,9 +8,8 @@ import androidx.lifecycle.*
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.faircorp.model.ApiServices
+import com.faircorp.service.ApiServices
 import com.faircorp.model.WindowAdapter
-import com.faircorp.service.WindowService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.*
 import kotlinx.coroutines.withContext

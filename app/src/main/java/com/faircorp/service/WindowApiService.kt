@@ -1,5 +1,6 @@
-package com.faircorp.model
+package com.faircorp.service
 
+import com.faircorp.model.WindowDto
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.PUT

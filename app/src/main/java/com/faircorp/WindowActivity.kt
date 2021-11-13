@@ -4,8 +4,8 @@ import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import com.faircorp.model.ApiServices
-import com.faircorp.service.WindowService
+import com.faircorp.service.ApiServices
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
