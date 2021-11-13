@@ -11,10 +11,11 @@
         android:theme="@style/Theme.Faircorp">
         <activity android:name=".WindowsActivity"></activity>
         <activity android:name=".RoomActivity"></activity>
+        <activity android:name=".RoomsActivity"></activity>
         <activity
             android:name=".WindowActivity"
-            android:parentActivityName=".RoomsActivity" />
-        <activity android:name=".RoomsActivity">
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
