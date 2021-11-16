@@ -12,6 +12,10 @@ import com.faircorp.model.WindowAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+/*
+this activity displays all windows of a selected room
+when we click on a windows it redirect us to windowActivity to display window's details
+ */
 
 class RoomActivity :BasicActivity() ,OnWindowSelectedListener{
     override fun onCreate(savedInstanceState: Bundle?) {

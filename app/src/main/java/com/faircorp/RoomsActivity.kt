@@ -12,6 +12,9 @@ import com.faircorp.service.ApiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+/* this activity displays all rooms of the building
+* and when we click on a room it shows details of room (direct to roomActivity)
+*/
 
 class RoomsActivity :BasicActivity() ,OnRoomSelectedListener{
     override fun onCreate(savedInstanceState: Bundle?) {

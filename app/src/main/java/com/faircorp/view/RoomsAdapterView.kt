@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.faircorp.OnRoomSelectedListener
-import com.faircorp.OnWindowSelectedListener
 import com.faircorp.R
 import com.faircorp.model.RoomDto
-import com.faircorp.model.WindowDto
+
 
 class RoomAdapter (val listener: OnRoomSelectedListener): RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() { // (1)
 
